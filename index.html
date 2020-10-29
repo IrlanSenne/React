@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .green{
+            color: white;
+            background-color: green;
+        }
+    </style>
 </head>
 <body>
 
@@ -101,9 +108,51 @@
                 )
             }
         }
+        class Color extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <p className="green">Texto com cor</p>
+                    </div>
+                )
+            }
+        }
 
+        function Tempo(){
+            const conteudo = (
+                <div>
+                    <hr/>
+                <h3 style={{color: "red"}}>Tempo atual</h3>
+                    <p className="green">Estamos na seguinte hora:{new Date().toLocaleTimeString()} </p>
+                    <hr/>
+                </div>
+            )
+            ReactDOM.render(conteudo ,
+            document.getElementById("root"))
+        }
+            
+       // setInterval(Tempo, 1000)
 
-        ReactDOM.render(<Adicao a={15} b={20} /> , root)
+        class Nomes extends React.Component{
+            constructor(){
+                super()
+                this.state = {
+                    nome: "Irlan",
+                    idade: 31
+                }
+            }
+            render(){
+                return(
+                    <div>
+                        <p>Nome: {this.state.nome} {this.props.apelido}</p>
+                        <p>Idade: {this.state.idade} </p>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<Nomes apelido="Moreira"/>, root)
+        
     </script>
 </body>
 </html>
