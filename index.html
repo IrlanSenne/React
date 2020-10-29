@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+
+    class MinhaClasse extends React.Component{
+        render(){
+            return (<div>
+            <p>Teste</p>
+            </div>)
+        }
+    }
+
+    class CompA extends React.Component{
+        render(){
+            return(
+                <h3>ComA</h3>
+            )
+        }
+    }
+    class CompB extends React.Component{
+        render(){
+            return(
+                <h3>ComB</h3>
+            )
+        }
+    }
+    class CompC extends React.Component{
+        render(){
+            return(
+                <div>
+                    <CompA/>
+                    <hr/>
+                    <CompB/>
+                </div>
+            )
+        }
+    }
+    function Propss(props){
+        return(
+            <div>
+                <p>Olá, {props.nome}</p>
+            </div>
+        )
+    }
+
+    var nome2 = "Fernanda"
+        function MeuComponente(){
+            return(
+                <div>
+                    <h1>Olá da função</h1>
+                    <p>Her name is {nome2}</p>
+                </div>
+            )
+        }
+
+        const root = document.getElementById("root");
+
+          
+
+
+        let nome = "Moreira";
+
+        function TesteProps(props){
+            return(
+                <div>
+                    Nome: {props.nome}
+                </div>
+            )
+        }
+
+        function TesteDomProps(){
+            return(
+                <div>
+                    <TesteProps nome="Ana"/>
+                    <TesteProps nome="João"/>
+                    <TesteProps nome="Maria"/>
+                    <TesteProps nome="Fernanda"/>
+                </div>
+            )
+        }
+
+        class Adicao extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <p>O resultado de {this.props.a} + {this.props.b} é {this.props.a + this.props.b}</p>
+                    </div>
+                )
+            }
+        }
+
+
+        ReactDOM.render(<Adicao a={15} b={20} /> , root)
+    </script>
+</body>
+</html>
