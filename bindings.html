@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+    
+    class App extends React.Component{
+
+       /* constructor(){
+            super()
+            this.state = {
+                nome: "João"
+            }
+        }
+
+        metodo = () =>{
+            console.log("Aqui")
+           this.setState({nome:"Moreira"})
+        }
+
+        metodo1(){
+            console.log("Aqui")
+           this.setState({nome:"Moreira"})
+        }
+
+        render(){
+            return(
+                <div>
+                    <p>Nome: {this.state.nome}</p>
+                    <button onClick={this.metodo}>Alterar</button>
+                </div>
+            )
+        } 
+       metodo(txt){
+           console.log(txt)
+       }
+
+        render(){
+            return(
+                <div>
+                    <h3>Texto do componente pai</h3>
+                    <CompA metodo={this.metodo} />
+                    <hr />
+                </div>
+            )
+        }
+*/
+constructor(){
+    super()
+    this.state = {
+        tempoBom: true
+    }
+}
+render(){
+   let texto
+   if(this.state.tempoBom){
+    texto = <p>O tempo está bom</p>
+   }else {
+    texto = <p>O tempo está mau</p>
+   }
+   return texto
+ 
+    }
+    }
+    
+    ReactDOM.render(
+        <App />,
+        document.getElementById("root")
+    )
+    
+    
+    
+    
+    </script>
+</body>
+</html>
