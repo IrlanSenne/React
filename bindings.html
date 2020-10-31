@@ -54,22 +54,85 @@
             )
         }
 */
-constructor(){
-    super()
-    this.state = {
-        tempoBom: true
-    }
+// constructor(){
+//     super()
+//     this.state = {
+//         tempoBom: true
+//     }
+// }
+
+
+
+   render(){
+//     const nomes = [
+//     "João",
+//     "Moreira",
+//     "Francisco"]
+
+//     const pessoas = [
+//         {
+//             nome:"João",
+//             profissao:"Programador"
+//         },
+//         {
+//             nome:"Maria",
+//             profissao:"Dentista"
+//         },
+//         {
+//             nome:"Francisco",
+//             profissao:"Gerente"
+//         }
+//     ]
+    
+   // const final = pessoas.map(n => <h3>{n.nome} - {n.profissao}</h3> )
+    
+    const noticias = [
+        {
+            titulo:"Baleia Azul",
+            texto:"A baleia era rosa e ficou azul na Póvoa",
+            autor:"Portuga"
+        },
+        {
+            titulo:"Sapateira louca",
+            texto:"A sapateira gosta de ser servida como se fosse lagosta",
+            autor:"Fernando"
+        },
+        {
+            titulo:"Camarão Salteado",
+            texto:"Sim, essas gambas são quentinhas e fresquinhas... ?!",
+            autor:"Desconhecido"
+        }
+    ]
+
+    const final = noticias.map((n, index) => <Noticias key={index} noticia={n}/>)
+    
+    return(
+        
+        <div>
+            <h2>Notícias</h2>
+            <hr/>
+          {final}
+        </div>
+    )
 }
-render(){
-   let texto
-   if(this.state.tempoBom){
-    texto = <p>O tempo está bom</p>
-   }else {
-    texto = <p>O tempo está mau</p>
-   }
-   return texto
- 
+
     }
+
+    class Noticias extends React.Component{
+        constructor(props){
+            super(props)
+            
+
+        }
+        render(){
+            return(
+                <div>
+                    <h3>{this.props.noticia.titulo}</h3>
+                    <p>{this.props.noticia.texto}</p>
+                    <small>{this.props.noticia.autor}</small>
+                </div>
+            )
+        }
     }
     
     ReactDOM.render(
@@ -77,8 +140,10 @@ render(){
         document.getElementById("root")
     )
     
-    
-    
+    // let nomes = ["João","Moreira","Francisco"]
+    // let final = nomes.map(nome => "Bom dia " + nome)
+    // console.log(nomes)
+    // console.log(final)
     
     </script>
 </body>
